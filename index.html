@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASMAB — Ana Sayfa</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cocoa: '#3b2621',
+            cream: '#efe8e4',
+            brand: { 500: '#13547a', 300: '#80d0c7' }
+          },
+          boxShadow: { glow: '0 10px 30px rgba(0,0,0,.15)' }
+        }
+      }
+    }
+  </script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    /* slider içi yazı için hafif blur arka plan */
+    .glass{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+    .swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+  </style>
+</head>
+<body class="bg-cream text-neutral-900 selection:bg-brand-300/30">
+
+  <!-- Ortak NAVBAR buraya JS ile enjekte edilir -->
+  <div id="navbar"></div>
+
+  <!-- HERO / FULLSCREEN SLIDER -->
+  <section id="hero" class="relative h-screen">
+    <div class="swiper h-full">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="absolute inset-0">
+            <img src="images/1.gif" class="w-full h-full object-cover" alt="Makine">
+            <div class="absolute inset-0 bg-neutral-900/40"></div>
+          </div>
+          <div class="relative h-full max-w-7xl mx-auto px-6 flex items-end pb-24">
+            <div class="text-white max-w-xl">
+              <span class="inline-block text-xs tracking-widest uppercase mb-3 bg-white/10 px-3 py-1 rounded-full">Öne Çıkan</span>
+              <h1 class="text-4xl sm:text-5xl font-bold leading-tight">İhtiyaca göre özelleştirilen yazılım ve makine çözümleri</h1>
+              <p class="mt-3 text-white/90">Performans, güvenlik ve kullanıcı deneyimi odaklı.</p>
+              <div class="mt-6 flex gap-3">
+                <a href="#about" class="rounded-xl px-5 py-3 bg-white/20 hover:bg-white/30 glass">Daha Fazlası</a>
+                <a href="contact.html" class="rounded-xl px-5 py-3 bg-brand-500 hover:bg-brand-300 text-white">İletişime Geç</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="absolute inset-0">
+            <img src="images/2.gif" class="w-full h-full object-cover" alt="Yapay Zeka">
+            <div class="absolute inset-0 bg-black/50"></div>
+          </div>
+          <div class="relative h-full max-w-7xl mx-auto px-6 flex items-center">
+            <div class="text-white max-w-xl">
+              <h2 class="text-4xl sm:text-5xl font-bold">Yapay zeka destekli uygulamalar</h2>
+              <p class="mt-3 text-white/90">Veri odaklı karar destek sistemleri ile işinizi hızlandırın.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="absolute inset-0">
+            <img src="images/3.gif" class="w-full h-full object-cover" alt="Takım">
+            <div class="absolute inset-0 bg-neutral-900/40"></div>
+          </div>
+          <div class="relative h-full max-w-7xl mx-auto px-6 flex items-center justify-end">
+            <div class="text-white max-w-xl text-right">
+              <h2 class="text-4xl sm:text-5xl font-bold">Birlikte güçlü projeler geliştirelim</h2>
+              <p class="mt-3 text-white/90">Tek satırdan platform ölçeğine, ihtiyacınıza uygun çözümler.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper navigation -->
+      <div class="swiper-pagination !bottom-6"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Altta kıvrımlı geçiş -->
+    <svg class="absolute -bottom-px left-0 right-0 w-full" height="80" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,32 C240,80 480,80 720,48 C960,16 1200,16 1440,48 L1440,80 L0,80 Z" fill="#efe8e4"/>
+    </svg>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-3xl font-bold">ASMAB</h3>
+          <p class="mt-4 text-neutral-700 leading-relaxed">
+            Modern web ve yazılım çözümleri. Performans, güvenlik ve kullanıcı deneyimi odaklı tasarım.
+            CI/CD, gözlemlenebilirlik ve ölçeklenebilir mimarilerle desteklenir.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a href="contact.html" class="rounded-xl px-5 py-3 bg-brand-500 hover:bg-brand-300 text-white">Teklif Al</a>
+            <a href="" class="rounded-xl px-5 py-3 ring-1 ring-neutral-300 hover:bg-white">Son Çalışmalar</a>
+          </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-glow">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" alt="Ofis" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG KARTLARI -->
+  <section id="blog" class="py-14 bg-cocoa text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-3xl font-bold">Son Eklenen Bloglar</h3>
+        <a href="#" class="rounded-full text-sm px-4 py-2 bg-white/10 hover:bg-white/20">Tüm Bloglar</a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10">
+          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="p-5">
+            <p class="text-xs text-white/70">02.09.2025</p>
+            <h4 class="mt-1 font-semibold text-lg">test</h4>
+            <p class="mt-2 text-sm text-white/80 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit…</p>
+            <a class="mt-4 inline-block text-sm px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20" href="#">Devamını Oku</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10">
+          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="p-5">
+            <p class="text-xs text-white/70">28.08.2025</p>
+            <h4 class="mt-1 font-semibold text-lg">test</h4>
+            <p class="mt-2 text-sm text-white/80 line-clamp-3">Aliquam, vel repellendus aperiam voluptatem…</p>
+            <a class="mt-4 inline-block text-sm px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20" href="#">Devamını Oku</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10">
+          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1400&auto=format&fit=crop" alt="">
+          <div class="p-5">
+            <p class="text-xs text-white/70">21.08.2025</p>
+            <h4 class="mt-1 font-semibold text-lg">test</h4>
+            <p class="mt-2 text-sm text-white/80 line-clamp-3">Eveniet nemo corrupti dolore numquam…</p>
+            <a class="mt-4 inline-block text-sm px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20" href="#">Devamını Oku</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANDI -->
+  <section class="relative -mt-10 mb-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="rounded-2xl bg-white shadow-glow p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h4 class="font-semibold text-lg">Birlikte güçlü projeler geliştirelim</h4>
+          <p class="text-sm text-neutral-600">Tek satırdan platform ölçeğine, ihtiyacınıza uygun çözümler.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="contact.html" class="rounded-xl px-4 py-2 bg-brand-500 hover:bg-brand-300 text-white">İletişime Geç</a>
+          <a href="" class="rounded-xl px-4 py-2 ring-1 ring-neutral-300 hover:bg-white">Hakkımızda</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <div id="footer"></div>
+
+<!-- Ortak footer loader -->
+<script src="assets/js/footer.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    
+new Swiper('.swiper', {
+  loop: true,
+  autoplay: { delay: 3500, disableOnInteraction: false },
+  effect: 'fade',
+  fadeEffect: { crossFade: true },
+  speed: 600,
+  pagination: { el: '.swiper-pagination', clickable: true }
+  // navigation kısmını sildik
+});
+
+  </script>
+
+  <!-- Ortak navbar loader (partials/navbar.html + assets/js/nav.js gerekiyor) -->
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>
